@@ -1,3 +1,5 @@
+import { ADD_FEATURE } from '../actions/storeActions';
+
 export const initialState = {
     additionalPrice: 0,
     car: {
@@ -13,4 +15,17 @@ export const initialState = {
       { id: 3, name: 'Premium sound system', price: 500 },
       { id: 4, name: 'Rear spoiler', price: 250 }
     ]
+};
+
+export const storeReducer = ( state = initialState, action) => {
+    switch (action.type) {
+        case ADD_FEATURE:
+            return {
+                ...state,
+                car: action.payload,
+                feature: state.additionalFeatures
+            };
+            default:
+                return state;
+    }
 };

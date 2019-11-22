@@ -7,7 +7,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 import { storeReducer } from './reducers/storeReducer';
 
-const appStore = createStore(storeReducer);
+export const appStore = createStore(storeReducer);
 
 const App = () => {
   const state = {
